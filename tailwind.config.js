@@ -4,6 +4,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        barlow: ["Barlow", "sans-serif"], // Barlow font
+        barlowCondensed: ["Barlow Condensed", "sans-serif"], // Barlow Condensed font
+        bellefair: ["Bellefair", "serif"], // Bellefair font
+      },
       screens: {
         xs: "480px", // Custom extra-small breakpoint
         sm: "640px", // Tailwind default

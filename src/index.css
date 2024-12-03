@@ -1,7 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  /* background-color: red; */
+.image {
+  background-image: url("./background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .image {
+    background-image: url("./background-home-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .image {
+    background-image: url("./background-home-desktop.jpg");
+  }
+}
+
+.hover-nav {
+  @apply uppercase tracking-wider hover:underline decoration-2 decoration-white/20 underline-offset-[2.9rem] transition-all duration-300;
+}
+
+.active-nav {
+  @apply uppercase decoration-white tracking-wider underline  decoration-2 underline-offset-[2.9rem] transition-all duration-300;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: #9c9aa6;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* home button animation */
+
+.btn-explore::before,
+.btn-explore::after {
+  content: "";
+  background-color: white;
+  height: 50rem;
+  width: 50rem;
 }
