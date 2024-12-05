@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function NavLinks() {
   return (
-    <div className="hidden md:flex relative px-[4rem] md:w-full xl:w-[70%]">
+    <div className="hidden md:flex relative px-[4rem] md:w-full lg:w-full">
       {/* Background with opacity */}
       <div className="absolute inset-0 bg-white/10  backdrop-blur-3xl pointer-events-none"></div>
       {/* the nav list */}

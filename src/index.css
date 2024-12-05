@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 62.5%;
+}
+
+/* Pages background-images */
+
+/* home */
 .image {
   background-image: url("./background-home-mobile.jpg");
   background-repeat: no-repeat;
@@ -22,6 +29,27 @@
   }
 }
 
+/* Distination */
+
+.image-destination {
+  background-image: url("./background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .image-destination {
+    background-image: url("./background-destination-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .image-destination {
+    background-image: url("./background-destination-desktop.jpg");
+  }
+}
+
+/* HAMBURGER MENU */
 .hover-nav {
   @apply uppercase tracking-wider hover:underline decoration-2 decoration-white/20 underline-offset-[2.9rem] transition-all duration-300;
 }
@@ -30,11 +58,6 @@
   @apply uppercase decoration-white tracking-wider underline  decoration-2 underline-offset-[2.9rem] transition-all duration-300;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-/* HAMBURGER MENU */
 .hamburger {
   cursor: pointer;
   width: 30px;
