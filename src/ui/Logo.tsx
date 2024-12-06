@@ -9,7 +9,7 @@ export default function Logo() {
       className="cursor-pointer"
     >
       <Link to="/">
-        <g fill="none" fill-rule="evenodd">
+        <g fill="none" fillRule="evenodd">
           <circle cx="24" cy="24" r="24" fill="#FFF" />
           <path
             fill="#0B0D17"
