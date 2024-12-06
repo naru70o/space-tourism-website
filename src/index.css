@@ -49,6 +49,26 @@ html {
   }
 }
 
+/* crew */
+
+.image-crew {
+  background-image: url("./background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .image-crew {
+    background-image: url("./background-crew-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .image-crew {
+    background-image: url("./background-crew-desktop.jpg");
+  }
+}
+
 /* HAMBURGER MENU */
 .hover-nav {
   @apply uppercase tracking-wider hover:underline decoration-2 decoration-white/20 underline-offset-[2.9rem] transition-all duration-300;
@@ -56,6 +76,15 @@ html {
 
 .active-nav {
   @apply uppercase decoration-white tracking-wider underline  decoration-2 underline-offset-[2.9rem] transition-all duration-300;
+}
+
+/* crew dots */
+
+.dot {
+  @apply bg-white w-[1rem] h-[1rem] rounded-full cursor-pointer;
+}
+.active-dot {
+  @apply bg-white/50 w-[1rem] h-[1rem] rounded-full cursor-pointer;
 }
 
 .hamburger {
@@ -113,4 +142,11 @@ html {
   background-color: white;
   height: 50rem;
   width: 50rem;
+}
+
+/* mask */
+
+.mask-image {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }

@@ -3,6 +3,7 @@ import MobileNav from "@/ui/MobileNav";
 import NavLinks from "@/ui/NavLinks";
 import data from "@/data.json";
 import { useState } from "react";
+import TopicName from "@/ui/TopicName";
 
 const { destinations } = data;
 
@@ -12,7 +13,6 @@ function Destination() {
 
   const currentPlanet = destinations.at(planet);
   const { name, images, description, distance, travel } = currentPlanet;
-  console.log(images.png);
 
   return (
     <div className="image-destination  h-screen overscroll-none overflow-hidden">
@@ -33,14 +33,7 @@ function Destination() {
         <div className="col-start-2 row-start-2 row-span-1 col-span-10 py-[2.4rem] md:py-[4rem] lg:max-w-7xl mx-auto">
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             {/* Header text */}
-            <div className="flex gap-4 md:self-start md:text-[2rem]">
-              <p className="text-[1.6rem]  text-white font-barlowCondensed tracking-widest font-bold md:text-start opacity-15">
-                01
-              </p>
-              <h1 className="text-white font-barlowCondensed text-[1.6rem] tracking-widest">
-                PICK YOUR DESTINATION
-              </h1>
-            </div>
+            <TopicName number="01" name="PICK YOUR DESTINATION" />
 
             {/* container for the info */}
 
