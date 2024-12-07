@@ -4,14 +4,23 @@ import NavLinks from "@/ui/NavLinks";
 import TopicName from "@/ui/TopicName";
 import { useState } from "react";
 import data from "@/data.json";
-const { crew } = data;
+
+type CrewMember = {
+  bio: string;
+  images: { png: string; webp: string };
+  name: string;
+  role: string;
+};
+
+const { crew }: { crew: CrewMember[] } = data;
 console.log(crew);
 
 function Crew() {
-  const [ActiveCrew, setActiveCrew] = useState(0);
+  const [ActiveCrew, setActiveCrew] = useState<number>(0);
 
-  const currentCrew = crew.at(ActiveCrew);
-  const { bio, biography, images, name, role } = currentCrew;
+  const currentCrew = crew.at(ActiveCrew) ?? crew[0];
+
+  const { bio, images, name, role } = currentCrew;
 
   console.log(bio);
 
