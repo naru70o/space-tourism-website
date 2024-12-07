@@ -69,6 +69,26 @@ html {
   }
 }
 
+/* technology */
+
+.image-technology {
+  background-image: url("./background-technology-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .image-technology {
+    background-image: url("./background-technology-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .image-technology {
+    background-image: url("./background-technology-desktop.jpg");
+  }
+}
+
 /* HAMBURGER MENU */
 .hover-nav {
   @apply uppercase tracking-wider hover:underline decoration-2 decoration-white/20 underline-offset-[2.9rem] transition-all duration-300;
@@ -149,4 +169,13 @@ html {
 .mask-image {
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* numbers */
+
+.number-active {
+  @apply bg-white font-bellefair flex justify-center items-center text-black rounded-full p-6 h-[4rem] w-[4rem] lg:h-[4rem] lg:w-[4rem];
+}
+.number-unactive {
+  @apply border-white/50 hover:border-white border-[1px]   font-bellefair flex justify-center text-white items-center transition  duration-200 ease-in cursor-pointer select-none rounded-full p-6 h-[4rem] w-[4rem] lg:h-[4rem] lg:w-[4rem];
 }
