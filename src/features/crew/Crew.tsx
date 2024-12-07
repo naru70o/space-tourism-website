@@ -22,8 +22,6 @@ function Crew() {
 
   const { bio, images, name, role } = currentCrew;
 
-  console.log(bio);
-
   return (
     <div className="image-crew h-screen overscroll-none overflow-hidden">
       {/* nav */}

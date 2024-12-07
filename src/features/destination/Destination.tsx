@@ -4,14 +4,23 @@ import NavLinks from "@/ui/NavLinks";
 import data from "@/data.json";
 import { useState } from "react";
 import TopicName from "@/ui/TopicName";
+import ReadMore from "@/ui/ReadMore";
 
-const { destinations } = data;
+type newPlanet = {
+  name: string;
+  images: { png: string; webp: string };
+  description: string;
+  distance: string;
+  travel: string;
+};
+
+const { destinations }: { destinations: newPlanet[] } = data;
 
 function Destination() {
-  const [planet, setPlanet] = useState(0);
-  const [more, setIsMore] = useState(true);
+  const [planet, setPlanet] = useState<number>(0);
+  const [more, setIsMore] = useState<boolean>(true);
 
-  const currentPlanet = destinations.at(planet);
+  const currentPlanet = destinations.at(planet) ?? destinations[0];
   const { name, images, description, distance, travel } = currentPlanet;
 
   return (
@@ -51,6 +60,7 @@ function Destination() {
                   {destinations.map((destination, index) => {
                     return (
                       <div
+                        key={destination.name}
                         className={`${
                           planet === index ? "active-nav" : "hover-nav"
                         } cursor-pointer select-none`}
@@ -69,12 +79,7 @@ function Destination() {
                   </h1>
                   <h2 className="text-center font-barlow text-[1.5rem] md:text-[1.8rem] md:tracking-[180%] tracking-wide lg:text-start">
                     {more ? description.slice(0, 100) : description}
-                    <div
-                      className="text-red-300"
-                      onClick={() => setIsMore((show) => !show)}
-                    >
-                      {more ? "more..." : "less..."}
-                    </div>
+                    <ReadMore more={more} setIsMore={setIsMore} />
                   </h2>
                 </div>
 
