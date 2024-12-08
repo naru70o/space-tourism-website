@@ -39,7 +39,7 @@ function Destination() {
         </div>
 
         {/* content */}
-        <div className="col-start-2 row-start-2 row-span-1 col-span-10 py-[2.4rem] md:py-[4rem] lg:max-w-7xl mx-auto">
+        <div className="col-start-2 row-start-2 row-span-1 col-span-10 py-[2.4rem] md:py-[4rem] lg:max-w-7xl mx-auto fade-in">
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             {/* Header text */}
             <TopicName number="01" name="PICK YOUR DESTINATION" />

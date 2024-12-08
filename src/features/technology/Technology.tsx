@@ -1,10 +1,11 @@
+import data from "@/data.json";
+import ErrorComponent from "@/ui/Error";
 import Logo from "@/ui/Logo";
 import MobileNav from "@/ui/MobileNav";
 import NavLinks from "@/ui/NavLinks";
 import TopicName from "@/ui/TopicName";
-import data from "@/data.json";
+import { error } from "console";
 import { useState } from "react";
-import clsx from "clsx";
 
 type UsedTechnology = {
   name: string;
@@ -14,18 +15,25 @@ type UsedTechnology = {
 
 const { technology }: { technology: UsedTechnology[] } = data;
 
-console.log(technology);
-
 function Destination() {
   const [tech, setTech] = useState<number>(0);
-  const currentTech = technology.at(tech) ?? tech[0];
+  const currentTech = technology.at(9);
+
+  if (!currentTech) {
+    const error = new Error("An error occurred");
+
+    // To get the error message as a string:
+    const errorMessage = error.message;
+    return <ErrorComponent message={errorMessage} />;
+  }
+
   const { name, description, images } = currentTech;
   return (
     <div className="image-destination  h-screen overscroll-none overflow-hidden">
       <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto h-full">
         {/* nav */}
-        <div className="grid col-start-1 row-start-1 row-span-1 col-span-12 grid-cols-subgrid flex-col overflow-hidden mt-0 px-[2.4rem] md:px-[0rem] h-fit text-white lg:pt-8 w-full">
-          <div className="flex justify-between h-fit items-center col-start-1 col-span-12 ">
+        <div className="grid grid-controller row-start-1 row-span-1 grid-cols-subgrid flex-col overflow-hidden mt-0 px-[2.4rem] md:px-[0rem] h-fit text-white lg:pt-8 w-full">
+          <div className="flex justify-between h-fit items-center grid-controller ">
             <div className="py-6 md:px-[4rem] lg:flex justify-center items-center">
               <Logo />
             </div>
@@ -38,7 +46,7 @@ function Destination() {
         {/* content */}
         <div
           className="col-start-1 lg:col-start-2
-         row-start-2 row-span-1 col-span-12 py-[2.4rem] md:py-[4rem]  mx-auto"
+         row-start-2 row-span-1 col-span-12 py-[2.4rem] md:py-[4rem]  mx-auto fade-in max-w-[120rem]"
         >
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             {/* Header text */}
@@ -51,7 +59,8 @@ function Destination() {
             <div className="grid grid-cols-2 w-full pt-[2.4rem] flex-col justify-between items-center gap-[3.2rem]">
               {/* image */}
               <div
-                className="col-start-1 col-span-2 w-full h-[23rem] md:h-[40rem] mb-8 bg-cover bg-center bg-no-repeat lg:col-start-2 lg:h-[50rem]"
+                className="col-start-1 col-span-2 w-full h-[23rem] md:h-[40rem] mb-8 bg-cover bg-center bg-no-repeat lg:col-start-2 lg:h-[50rem] lg:w-[80%]
+                "
                 style={{
                   backgroundImage:
                     window.innerWidth >= 1024
