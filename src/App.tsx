@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./features/home/Home";
-import Crew from "./features/crew/Crew";
-import Destination from "./features/destination/Destination";
-import Technology from "./features/technology/Technology";
 import NotFound from "./ui/NotFound";
 import Loading from "./ui/Loading";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
+
+const Home = lazy(() => import("./features/home/Home"));
+const Destination = lazy(() => import("./features/destination/Destination"));
+const Crew = lazy(() => import("./features/crew/Crew"));
+const Technology = lazy(() => import("./features/technology/Technology"));
+
 const router = createBrowserRouter([
   {
     path: "/",
