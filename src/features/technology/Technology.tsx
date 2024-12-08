@@ -17,7 +17,7 @@ const { technology }: { technology: UsedTechnology[] } = data;
 
 function Destination() {
   const [tech, setTech] = useState<number>(0);
-  const currentTech = technology.at(9);
+  const currentTech = technology.at(tech);
 
   if (!currentTech) {
     const error = new Error("An error occurred");
@@ -45,8 +45,8 @@ function Destination() {
 
         {/* content */}
         <div
-          className="col-start-1 lg:col-start-2
-         row-start-2 row-span-1 col-span-12 py-[2.4rem] md:py-[4rem]  mx-auto fade-in max-w-[120rem]"
+          className="grid-controller lg:col-start-2 lg:col-span-12
+         row-start-2 row-span-1 py-[2.4rem] md:py-[4rem]  mx-auto fade-in max-w-[120rem]"
         >
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             {/* Header text */}
