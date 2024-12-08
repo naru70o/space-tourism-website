@@ -4,6 +4,7 @@ import NavLinks from "@/ui/NavLinks";
 import TopicName from "@/ui/TopicName";
 import { useState } from "react";
 import data from "@/data.json";
+import ErrorComponent from "@/ui/Error";
 
 type CrewMember = {
   bio: string;
@@ -18,7 +19,15 @@ console.log(crew);
 function Crew() {
   const [ActiveCrew, setActiveCrew] = useState<number>(0);
 
-  const currentCrew = crew.at(ActiveCrew) ?? crew[0];
+  const currentCrew = crew.at(ActiveCrew);
+
+  if (!currentCrew) {
+    const error = new Error("An error occurred");
+
+    // To get the error message as a string:
+    const errorMessage = error.message;
+    return <ErrorComponent message={errorMessage} />;
+  }
 
   const { bio, images, name, role } = currentCrew;
 
