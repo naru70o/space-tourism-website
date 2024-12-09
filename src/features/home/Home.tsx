@@ -2,23 +2,18 @@ import MobileNav from "../../ui/MobileNav";
 import Logo from "../../ui/Logo";
 import NavLinks from "../../ui/NavLinks";
 import { Link } from "react-router";
+import { useState } from "react";
+import Navigation from "@/ui/Navigation";
 
 export default function Home() {
+  const [open, setIsOpen] = useState<boolean>(false);
+
   return (
     <div className="image h-screen overscroll-none overflow-hidden">
-      {/* nav */}
       <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto justify-between h-full">
-        <div className="grid col-start-1 col-span-12 row-start-1 row-span-1 grid-cols-subgrid flex-col overflow-hidden mt-0 px-[2.4rem] md:px-[0rem] text-white lg:pt-8 w-full">
-          {/* nav */}
-          <div className="flex justify-between h-fit items-center col-start-1 col-span-12 ">
-            <div className="py-6 md:px-[4rem] xl:flex justify-center items-center">
-              <Logo />
-            </div>
-            <div className="h-[0.1rem] opacity-25 w-full hidden lg:flex bg-white translate-x-10 z-20"></div>
-            <NavLinks />
-            <MobileNav />
-          </div>
-        </div>
+        {/* nav */}
+        <Navigation open={open} setIsOpen={setIsOpen} />
+
         {/* content */}
 
         <div className="col-start-2 col-span-10 max-w-[120rem] md:mt-[12rem] mx-auto h-full text-white fade-in">

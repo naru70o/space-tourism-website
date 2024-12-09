@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 /* Pages background-images */
@@ -96,6 +97,15 @@ html {
 
 .active-nav {
   @apply uppercase decoration-white tracking-wider underline  decoration-2 underline-offset-[2.9rem] transition-all duration-300;
+}
+
+/* mobile */
+
+.hover-nav-mobile {
+  @apply h-[70%] w-1 group-hover:bg-white/75 transition duration-300 ease-in-out;
+}
+.active-nav-mobile {
+  @apply bg-white h-[70%] w-1 transition duration-300 ease-in-out;
 }
 
 /* crew dots */
@@ -209,4 +219,35 @@ html {
 
 .fade-in {
   animation: fadeIn 1s ease-in-out;
+}
+
+/* nav mobile */
+.nav-mobile-slide {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  to {
+    transform: translateX(0); /* End at its original position */
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0); /* Start at its original position */
+  }
+  to {
+    transform: translateX(100%); /* End off-screen to the right */
+  }
+}
+
+.open {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+.closed {
+  display: hidden;
+  animation: slideOutToRight 0.5s ease forwards;
 }

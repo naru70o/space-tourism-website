@@ -5,6 +5,7 @@ import TopicName from "@/ui/TopicName";
 import { useState } from "react";
 import data from "@/data.json";
 import ErrorComponent from "@/ui/Error";
+import Navigation from "@/ui/Navigation";
 
 type CrewMember = {
   bio: string;
@@ -18,6 +19,7 @@ console.log(crew);
 
 function Crew() {
   const [ActiveCrew, setActiveCrew] = useState<number>(0);
+  const [open, setIsOpen] = useState<boolean>(false);
 
   const currentCrew = crew.at(ActiveCrew);
 
@@ -36,16 +38,7 @@ function Crew() {
       {/* nav */}
       <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto h-full">
         {/* nav */}
-        <div className="grid col-start-1 row-start-1 row-span-1 col-span-12 grid-cols-subgrid flex-col overflow-hidden mt-0 px-[2.4rem] md:px-[0rem] h-fit text-white lg:pt-8 w-full">
-          <div className="flex justify-between h-fit items-center col-start-1 col-span-12 ">
-            <div className="py-6 md:px-[4rem] lg:flex justify-center items-center">
-              <Logo />
-            </div>
-            <div className="h-[0.1rem] opacity-25 w-[70%] hidden lg:flex bg-white translate-x-10 z-20"></div>
-            <NavLinks />
-            <MobileNav />
-          </div>
-        </div>
+        <Navigation open={open} setIsOpen={setIsOpen} />
         {/* content */}
         <div className="col-start-2 row-start-2 row-span-1 col-span-10 py-[2.4rem] md:py-[4rem] lg:max-w-7xl mx-auto h-full">
           <div className="flex flex-col items-center justify-between gap-[2rem] h-full fade-in">

@@ -2,9 +2,9 @@ import data from "@/data.json";
 import ErrorComponent from "@/ui/Error";
 import Logo from "@/ui/Logo";
 import MobileNav from "@/ui/MobileNav";
+import Navigation from "@/ui/Navigation";
 import NavLinks from "@/ui/NavLinks";
 import TopicName from "@/ui/TopicName";
-import { error } from "console";
 import { useState } from "react";
 
 type UsedTechnology = {
@@ -17,6 +17,8 @@ const { technology }: { technology: UsedTechnology[] } = data;
 
 function Destination() {
   const [tech, setTech] = useState<number>(0);
+  const [open, setIsOpen] = useState<boolean>(false);
+
   const currentTech = technology.at(tech);
 
   if (!currentTech) {
@@ -29,18 +31,11 @@ function Destination() {
 
   const { name, description, images } = currentTech;
   return (
-    <div className="image-destination  h-screen overscroll-none overflow-hidden">
-      <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto h-full">
+    <div className="image-destination h-screen overscroll-none overflow-hidden">
+      <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto justify-between h-full">
         {/* nav */}
-        <div className="grid grid-controller row-start-1 row-span-1 grid-cols-subgrid flex-col overflow-hidden mt-0 px-[2.4rem] md:px-[0rem] h-fit text-white lg:pt-8 w-full">
-          <div className="flex justify-between h-fit items-center grid-controller ">
-            <div className="py-6 md:px-[4rem] lg:flex justify-center items-center">
-              <Logo />
-            </div>
-            <div className="h-[0.1rem] opacity-25 w-[90%] hidden lg:flex bg-white translate-x-10 z-20"></div>
-            <NavLinks />
-            <MobileNav />
-          </div>
+        <div className="grid-controller">
+          <Navigation open={open} setIsOpen={setIsOpen} />
         </div>
 
         {/* content */}

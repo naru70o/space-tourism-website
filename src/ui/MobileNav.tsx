@@ -1,15 +1,11 @@
-import React, { useState } from "react";
-
-export default function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function MobileNav({ setIsOpen, open }) {
   return (
     <button
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => setIsOpen(!open)}
       id="menu-btn"
       className={`${
-        isOpen ? "open" : ""
-      } hamburger mt-3 md:hidden focus:outline-none self-center`}
+        open ? "open" : ""
+      } hamburger mt-3 md:hidden z-[999] focus:outline-none self-center`}
       type="button"
     >
       <span className="hamburger-top"></span>
