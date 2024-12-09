@@ -1,4 +1,9 @@
-export default function MobileNav({ setIsOpen, open }) {
+interface Props {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  open: boolean;
+}
+
+export default function MobileNav({ setIsOpen, open }: Props) {
   return (
     <button
       onClick={() => setIsOpen(!open)}

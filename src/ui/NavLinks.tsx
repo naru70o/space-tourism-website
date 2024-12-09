@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
-
-function NavLinks({ open }) {
+interface Props {
+  open: boolean;
+}
+function NavLinks({ open }: Props) {
   const navigate = useNavigate();
   return (
     <>
