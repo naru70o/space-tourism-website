@@ -12,7 +12,9 @@ export default function Home() {
     <div className="image h-screen overscroll-none overflow-hidden">
       <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto justify-between h-full">
         {/* nav */}
-        <Navigation open={open} setIsOpen={setIsOpen} />
+        <div className="grid-controller">
+          <Navigation open={open} setIsOpen={setIsOpen} />
+        </div>
 
         {/* content */}
 

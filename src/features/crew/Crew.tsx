@@ -35,7 +35,9 @@ function Crew() {
       {/* nav */}
       <div className="grid grid-col-12 grid-rows-[repeat(10,min-content)] overflow-y-auto h-full">
         {/* nav */}
-        <Navigation open={open} setIsOpen={setIsOpen} />
+        <div className="grid-controller">
+          <Navigation open={open} setIsOpen={setIsOpen} />
+        </div>
         {/* content */}
         <div className="col-start-2 row-start-2 row-span-1 col-span-10 py-[2.4rem] md:py-[4rem] lg:max-w-7xl mx-auto h-full">
           <div className="flex flex-col items-center justify-between gap-[2rem] h-full fade-in">
