@@ -223,9 +223,6 @@ html {
 }
 
 /* nav mobile */
-.nav-mobile-slide {
-  animation: slideInFromRight 0.5s ease forwards;
-}
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%); /* Start off-screen to the right */

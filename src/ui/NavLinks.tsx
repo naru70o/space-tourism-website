@@ -55,9 +55,10 @@ function NavLinks({ open }: Props) {
       </div>
 
       {/* mobile */}
+
       <div
         className={`bg-white/5 backdrop-blur-xl md: md:hidden z-[90] flex h-screen w-[70%] right-0 top-0 fixed text-white pl-8 py-32 ${
-          open ? "open" : "closed"
+          open ? "open" : "hidden"
         }`}
       >
         <ul className="flex flex-col items-start text-white font-normal py-10 font-barlowCondensed h-full text-[1.6rem] gap-4 justify-start w-full z-10 tracking-widest">

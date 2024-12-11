@@ -38,7 +38,7 @@ function Destination() {
         {/* content */}
         <div
           className="grid-controller lg:col-start-2 lg:col-span-12
-         row-start-2 row-span-1 py-[2.4rem] md:py-[4rem]  mx-auto fade-in max-w-[120rem]"
+         row-start-2 row-span-1 py-[2.4rem] md:py-[4rem] px-4 mx-auto fade-in max-w-[120rem]"
         >
           <div className="flex flex-col items-center justify-center gap-[2rem]">
             {/* Header text */}

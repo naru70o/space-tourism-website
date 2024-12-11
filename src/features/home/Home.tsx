@@ -1,9 +1,6 @@
-import MobileNav from "../../ui/MobileNav";
-import Logo from "../../ui/Logo";
-import NavLinks from "../../ui/NavLinks";
-import { Link } from "react-router";
-import { useState } from "react";
 import Navigation from "@/ui/Navigation";
+import { useState } from "react";
+import { Link } from "react-router";
 
 export default function Home() {
   const [open, setIsOpen] = useState<boolean>(false);
@@ -18,7 +15,7 @@ export default function Home() {
 
         {/* content */}
 
-        <div className="col-start-2 col-span-10 max-w-[120rem] md:mt-[12rem] mx-auto h-full text-white fade-in">
+        <div className="col-start-2 col-span-10 max-w-[120rem] md:mt-[12rem] px-4 mx-auto h-full text-white fade-in">
           <div className="flex flex-col lg:flex-row gap-[1.6rem] justify-between items-center max-w-[122.8rem] lg:mx-auto mt-[2.4rem] md:mt-[1rem] h-full py-6">
             <div className="flex flex-col justify-start items-center lg:items-start lg:flex-1">
               {/* header */}
