@@ -13,7 +13,7 @@ html {
 
 /* home */
 .image {
-  background-image: url("/background-home-mobile.jpg") !important;
+  background-image: url("/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
