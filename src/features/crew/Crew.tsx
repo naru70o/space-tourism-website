@@ -1,11 +1,8 @@
-import Logo from "@/ui/Logo";
-import MobileNav from "@/ui/MobileNav";
-import NavLinks from "@/ui/NavLinks";
-import TopicName from "@/ui/TopicName";
-import { useState } from "react";
 import data from "@/data.json";
 import ErrorComponent from "@/ui/Error";
 import Navigation from "@/ui/Navigation";
+import TopicName from "@/ui/TopicName";
+import { useState } from "react";
 
 type CrewMember = {
   bio: string;
@@ -79,7 +76,7 @@ function Crew() {
               {/* //////////// */}
               <div className="flex flex-col items-center justify-center w-full lg:flex-1">
                 <img
-                  src={images.png}
+                  src={images.webp}
                   alt="man"
                   className="h-[28rem] md:h-[56rem] lg:h-[40rem] lg:w-fit w-fit mask-image"
                 />

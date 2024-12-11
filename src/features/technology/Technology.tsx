@@ -1,9 +1,6 @@
 import data from "@/data.json";
 import ErrorComponent from "@/ui/Error";
-import Logo from "@/ui/Logo";
-import MobileNav from "@/ui/MobileNav";
 import Navigation from "@/ui/Navigation";
-import NavLinks from "@/ui/NavLinks";
 import TopicName from "@/ui/TopicName";
 import { useState } from "react";
 

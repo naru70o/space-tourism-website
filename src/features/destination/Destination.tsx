@@ -38,7 +38,7 @@ function Destination() {
             <div className="flex lg:flex-row pt-[2.4rem] flex-col justify-between items-center gap-[3.2rem]">
               {/* image */}
               <img
-                src={images.png}
+                src={images.webp}
                 className="h-[15rem] w-[15rem] mb-[3.2rem] md:h-[30rem] md:w-[30rem]"
                 alt=""
               />
