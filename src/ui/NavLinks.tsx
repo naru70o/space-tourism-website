@@ -56,7 +56,7 @@ function NavLinks({ open }: Props) {
 
       {/* mobile */}
       <div
-        className={`bg-white/5 backdrop-blur-xl md: md:hidden z-[90] flex h-screen w-[70%] right-0 top-0 absolute text-white pl-8 py-32 ${
+        className={`bg-white/5 backdrop-blur-xl md: md:hidden z-[90] flex h-screen w-[70%] right-0 top-0 fixed text-white pl-8 py-32 ${
           open ? "open" : "closed"
         }`}
       >
