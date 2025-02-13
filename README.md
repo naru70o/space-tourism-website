@@ -22,6 +22,3 @@ The objective of this challenge was to **practice responsiveness**, refine my UI
 
 This project has been successfully completed and serves as a valuable addition to my front-end portfolio. 🚀  
 
----  
-
-Let me know if you’d like any modifications! 😊  
