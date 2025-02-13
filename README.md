@@ -22,3 +22,5 @@ The objective of this challenge was to **practice responsiveness**, refine my UI
 
 This project has been successfully completed and serves as a valuable addition to my front-end portfolio. 🚀  
 
+![Design preview for the Space tourism website coding challenge](./preview.jpg)
+
